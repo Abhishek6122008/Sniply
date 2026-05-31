@@ -27,7 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>21</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -66,6 +66,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<jvmArguments>-Duser.timezone=UTC</jvmArguments>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
@@ -85,6 +86,8 @@
 							<goal>compile</goal>
 						</goals>
 						<configuration>
+							<source>21</source>
+							<target>21</target>
 							<annotationProcessorPaths>
 								<path>
 									<groupId>org.projectlombok</groupId>
@@ -100,6 +103,8 @@
 							<goal>testCompile</goal>
 						</goals>
 						<configuration>
+							<source>21</source>
+							<target>21</target>
 							<annotationProcessorPaths>
 								<path>
 									<groupId>org.projectlombok</groupId>
